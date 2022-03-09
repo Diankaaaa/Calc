@@ -42,16 +42,15 @@ class InputActivity : AppCompatActivity() {
                 putExtra(EXTRA_NUMBER2,number2.text.toString())
                 if(summa.isChecked)
                 {
-                    Summa = number1.text.toString().toInt() + number2.text.toString().toInt()
-                    putExtra(EXTRA_TYPE_OPERATION,Summa)
+                    putExtra(EXTRA_TYPE_OPERATION,"+")
                 }
+                else
                 if(maxdivsor.isChecked){
-                   MaxDivisor=NOD(number1.text.toString().toInt(),number2.text.toString().toInt())
-                    putExtra(EXTRA_TYPE_OPERATION,MaxDivisor)
+                    putExtra(EXTRA_TYPE_OPERATION,"NOD")
                 }
+                else
                 if(multiply.isChecked){
-                    Multiply = number1.text.toString().toInt() * number2.text.toString().toInt()
-                    putExtra(EXTRA_TYPE_OPERATION,Multiply)
+                    putExtra(EXTRA_TYPE_OPERATION,"*")
                 }
             }
             setResult(Activity.RESULT_OK,data)
@@ -59,14 +58,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun NOD(x: Int, y: Int): Int {
-        var x = x
-        var y = y
-        while (x != y) {
-            if (x > y) x = x - y else y = y - x
-        }
-        return x
-    }
+
 
     companion object{
         fun newIntent(packageContext: Context): Intent

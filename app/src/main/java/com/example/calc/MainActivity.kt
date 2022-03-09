@@ -57,13 +57,39 @@ class MainActivity : AppCompatActivity() {
         {
             val n1: String? = data?.getStringExtra(EXTRA_NUMBER1)
             val n2: String? = data?.getStringExtra(EXTRA_NUMBER2)
-            val type:Boolean = data?.getBooleanExtra(EXTRA_TYPE_OPERATION,false)?:false
-
-            if(type!=false)
-            {
-                res="Число1: "+n1+ "Число2: " +"Операция: "+type + "Результат: "
-            }
-
+            val type:String? = data?.getStringExtra(EXTRA_TYPE_OPERATION)
+            var i:Int=0;
+//            if(type.equals("+"))
+//                if (n1 != null) {
+//                    if (n2 != null) {
+//                        res=n1+"+"+n2+"="+(n1.toInt()+n2.toInt())
+//                    }
+//                }
+//            else if(type.equals("NOD"))
+//                {
+//                    if (n1 != null) {
+//                        if (n2 != null) {
+//                            res="NOD("+n1+","+n2+")="+NOD(n1.toInt(),n2.toInt())
+//                        }
+//                    }
+//                }
+//            else if(type.equals("*"))
+//                {
+//                    if (n1 != null) {
+//                        if (n2 != null) {
+//                            res=n1+"*"+n2+"="+(n1.toInt()*n2.toInt())
+//                        }
+//                    }
+//                }
         }
+    }
+
+    fun NOD(x: Int, y: Int): Int {
+        var x = x
+        var y = y
+        while (x != y) {
+            if (x > y) x = x - y else y = y - x
+        }
+        return x
     }
 }

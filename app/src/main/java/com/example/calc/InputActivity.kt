@@ -10,8 +10,8 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-public const val EXTRA_NUMBER1="number"
-public const val EXTRA_NUMBER2="number"
+public const val EXTRA_NUMBER1="number1"
+public const val EXTRA_NUMBER2="number2"
 public const val EXTRA_TYPE_OPERATION="type"
 
 class InputActivity : AppCompatActivity() {
@@ -42,25 +42,24 @@ class InputActivity : AppCompatActivity() {
                 putExtra(EXTRA_NUMBER2,number2.text.toString())
                 if(summa.isChecked)
                 {
-                    Summa = number1.toString().toInt() + number2.toString().toInt()
-                    putExtra(EXTRA_TYPE_OPERATION,true)
+                    Summa = number1.text.toString().toInt() + number2.text.toString().toInt()
+                    putExtra(EXTRA_TYPE_OPERATION,Summa)
                 }
                 if(maxdivsor.isChecked){
-                    НОД(number1.toString().toInt(),number2.toString().toInt())
-                    putExtra(EXTRA_TYPE_OPERATION,true)
+                   MaxDivisor=NOD(number1.text.toString().toInt(),number2.text.toString().toInt())
+                    putExtra(EXTRA_TYPE_OPERATION,MaxDivisor)
                 }
                 if(multiply.isChecked){
-                    Multiply = number1.toString().toInt() * number2.toString().toInt()
-                    putExtra(EXTRA_TYPE_OPERATION,true)
+                    Multiply = number1.text.toString().toInt() * number2.text.toString().toInt()
+                    putExtra(EXTRA_TYPE_OPERATION,Multiply)
                 }
-
             }
             setResult(Activity.RESULT_OK,data)
             this.finish()
         }
     }
 
-    fun НОД(x: Int, y: Int): Int {
+    fun NOD(x: Int, y: Int): Int {
         var x = x
         var y = y
         while (x != y) {

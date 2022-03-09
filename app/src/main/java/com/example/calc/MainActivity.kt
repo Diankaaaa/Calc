@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.view.get
 
 
+
 private const val REQUEST_CODE=0
 class MainActivity : AppCompatActivity() {
     private var menu: Menu?=null
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
             if(type!=false)
             {
-                res="Число1:"+n1+ "Число2: " +"Операция: "+type + "Результат: "
+                res="Число1: "+n1+ "Число2: " +"Операция: "+type + "Результат: "
             }
 
         }

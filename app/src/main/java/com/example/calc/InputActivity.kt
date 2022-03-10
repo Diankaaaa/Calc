@@ -34,6 +34,7 @@ class InputActivity : AppCompatActivity() {
         summa = findViewById(R.id.summa)
         maxdivsor = findViewById(R.id.max_divsor)
         multiply = findViewById(R.id.multiply)
+
         buttonok = findViewById(R.id.OK)
 
         buttonok.setOnClickListener { view:View->

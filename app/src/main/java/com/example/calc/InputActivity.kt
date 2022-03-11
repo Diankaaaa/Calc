@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 public const val EXTRA_NUMBER1="number1"
 public const val EXTRA_NUMBER2="number2"
-public const val EXTRA_TYPE_OPERATION="type"
+public const val EXTRA_OPERATION="operation"
 
 class InputActivity : AppCompatActivity() {
     private lateinit var number1 : EditText
@@ -43,15 +44,15 @@ class InputActivity : AppCompatActivity() {
                 putExtra(EXTRA_NUMBER2,number2.text.toString())
                 if(summa.isChecked)
                 {
-                    putExtra(EXTRA_TYPE_OPERATION,"+")
+                    putExtra(EXTRA_OPERATION,1)
                 }
                 else
                 if(maxdivsor.isChecked){
-                    putExtra(EXTRA_TYPE_OPERATION,"NOD")
+                    putExtra(EXTRA_OPERATION,2)
                 }
                 else
                 if(multiply.isChecked){
-                    putExtra(EXTRA_TYPE_OPERATION,"*")
+                    putExtra(EXTRA_OPERATION,3)
                 }
             }
             setResult(Activity.RESULT_OK,data)

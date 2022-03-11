@@ -57,15 +57,15 @@ class MainActivity : AppCompatActivity() {
         {
             val n1: String? = data?.getStringExtra(EXTRA_NUMBER1)
             val n2: String? = data?.getStringExtra(EXTRA_NUMBER2)
-            val type:String? = data?.getStringExtra(EXTRA_TYPE_OPERATION)
+            val typeOpper:Int = data?.getIntExtra(EXTRA_OPERATION,0) ?: 0
             var i:Int=0;
-//            if(type.equals("+"))
+//            if(typeOpper==1)
 //                if (n1 != null) {
 //                    if (n2 != null) {
 //                        res=n1+"+"+n2+"="+(n1.toInt()+n2.toInt())
 //                    }
 //                }
-//            else if(type.equals("NOD"))
+//                else if(typeOpper==2)
 //                {
 //                    if (n1 != null) {
 //                        if (n2 != null) {
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 //                        }
 //                    }
 //                }
-//            else if(type.equals("*"))
+//                else if(typeOpper==3)
 //                {
 //                    if (n1 != null) {
 //                        if (n2 != null) {
@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 //                    }
 //                }
         }
+
     }
 
     fun NOD(x: Int, y: Int): Int {
